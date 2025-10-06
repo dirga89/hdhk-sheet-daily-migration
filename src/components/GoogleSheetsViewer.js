@@ -15,7 +15,7 @@ function isWorksheetData(response) {
 }
 
 export default function GoogleSheetsViewer() {
-  const [sheetUrl, setSheetUrl] = useState('https://docs.google.com/spreadsheets/d/1cwfNr8dhx3US2YZq-NHANSBh1KoY_Y3g_-gMX4D5kzk/edit?gid=0#gid=0');
+  const [sheetUrl, setSheetUrl] = useState('https://docs.google.com/spreadsheets/d/1Srhz_f7IlxZy1ZoGYHk3uWHTVcOCQ2k8g5SjYVliuJg/edit?gid=0#gid=0');
   const [spreadsheetId, setSpreadsheetId] = useState(null);
   const [worksheets, setWorksheets] = useState([]);
   const [selectedWorksheet, setSelectedWorksheet] = useState('');
@@ -39,17 +39,17 @@ export default function GoogleSheetsViewer() {
 
   // Column mapping state
   const [columnMapping, setColumnMapping] = useState({
-    firstName: 2,    // Column index for first name
-    lastName: 3,     // Column index for last name
-    email: 10,        // Column index for email
-    phone: 9,        // Column index for phone number
-    gender: 4,        // Column index for gender
-    birthDate:6,     // Column index for birth date
-    age: 5,          // Column index for age (optional)
-    occupation: 8,    // Column index for occupation/job
-    registrationDate: 11, // Column index for registration date
-    hearUsFrom: 12,   // Column index for "hear us from" source
-    postItColumns: [1, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26] // Column indices for post_it comment
+    firstName: 3,     // Column index for first name
+    lastName: 4,      // Column index for last name
+    email: 8,         // Column index for email
+    phone: 7,         // Column index for phone number
+    gender: 5,        // Column index for gender
+    birthDate:6,      // Column index for birth date
+    age: 99,          // Column index for age (optional)
+    occupation: 9,    // Column index for occupation/job
+    registrationDate: 99, // Column index for registration date
+    hearUsFrom: 2,   // Column index for "hear us from" source
+    postItColumns: [17, 18, 19, 20, 21, 22, 23, 24, 25, 26] // Column indices for post_it comment
   });
 
   // Duplicate checking state
