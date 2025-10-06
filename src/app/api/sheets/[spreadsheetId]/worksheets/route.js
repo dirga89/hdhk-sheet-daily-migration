@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import { getAuthenticatedClientFromRequest } from '@/lib/google-auth-utils';
 

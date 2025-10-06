@@ -169,7 +169,7 @@ export default function GoogleSheetsViewer() {
       } else {
         setWorksheets(response);
       }
-    } catch (err) {
+    } catch {
       setError('Failed to load worksheets. Check the console for details.');
       setWorksheets([]);
     } finally {
@@ -204,7 +204,7 @@ export default function GoogleSheetsViewer() {
         setWorksheetData([]);
         setWorksheetMetadata(null);
       }
-    } catch (err) {
+    } catch {
       setError('Failed to load worksheet data. Check the console for details.');
       setWorksheetData([]);
       setWorksheetMetadata(null);
@@ -567,7 +567,7 @@ export default function GoogleSheetsViewer() {
             <div className="bg-green-50 border border-green-200 rounded-lg p-4">
               <h3 className="text-lg font-medium text-green-900 mb-2">✅ Ready to View Sheets!</h3>
               <p className="text-green-700 mb-3">
-                You're now authenticated with Google and can view real Google Sheets data!
+                You&apos;re now authenticated with Google and can view real Google Sheets data!
               </p>
               <div className="text-sm text-green-600">
                 <p><strong>Spreadsheet ID:</strong> {spreadsheetId}</p>
@@ -616,7 +616,7 @@ export default function GoogleSheetsViewer() {
                 <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                   <div className="flex items-center justify-center gap-3 text-blue-700">
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
-                    <span className="text-sm">Loading data for "{selectedWorksheet}"...</span>
+                    <span className="text-sm">Loading data for &quot;{selectedWorksheet}&quot;...</span>
                   </div>
                 </div>
               )}

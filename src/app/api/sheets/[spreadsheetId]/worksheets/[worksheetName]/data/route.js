@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import { getAuthenticatedClientFromRequest } from '@/lib/google-auth-utils';
 
@@ -83,7 +83,7 @@ export async function GET(request, { params }) {
           };
 
           return NextResponse.json(result);
-        } catch (fallbackError) {
+        } catch {
           return NextResponse.json(
             { 
               error: 'Worksheet too large', 

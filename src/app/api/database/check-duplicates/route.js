@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
+import mysql from 'mysql2/promise';
 
 export async function POST(request) {
   try {
@@ -51,7 +52,6 @@ export async function POST(request) {
       }
     });
 
-    const mysql = require('mysql2/promise');
     const connection = await mysql.createConnection({
       host: dbConfig.host,
       port: dbConfig.port,

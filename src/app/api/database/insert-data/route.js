@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
+import mysql from 'mysql2/promise';
 
 // Gender mapping function
 function mapGenderToNumeric(rawGender) {
@@ -122,7 +123,7 @@ export async function POST(request) {
     const branch = process.env.CENTRAL_BRANCH;
     const systemUserId = process.env.CENTRAL_SYSTEM_USER_ID;
     const hitType = 3; // WEBSITE
-    const productId = 1; // Lunch Actually
+    // const productId = 1; // Lunch Actually
 
     // Validate database configuration
     const requiredVars = ['DB_HOST', 'DB_PORT', 'DB_NAME', 'DB_USERNAME', 'DB_PASSWORD'];
@@ -233,7 +234,6 @@ export async function POST(request) {
        console.log('🔍 No hear_us_from values found in selected rows');
      }
     
-    const mysql = require('mysql2/promise');
     const connection = await mysql.createConnection({
       host: dbConfig.host,
       port: dbConfig.port,
@@ -664,10 +664,10 @@ export async function POST(request) {
 
         // Step 15: Update profile with profile_pref_id reference
         console.log(`🔍 Row ${rowIndex}: Getting profile_preferences ID to update profile...`);
-        const [prefResult] = await connection.execute(
-          'SELECT id FROM profile_pref WHERE profile_id = ? ORDER BY created_on DESC LIMIT 1',
-          [profileId]
-        );
+        // const [prefResult] = await connection.execute(
+        //   'SELECT id FROM profile_pref WHERE profile_id = ? ORDER BY created_on DESC LIMIT 1',
+        //   [profileId]
+        // );
 
         // if (prefResult && prefResult.length > 0) {
         //   const prefId = prefResult[0].id;

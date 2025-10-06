@@ -35,7 +35,7 @@ export class GoogleAuthService {
     return tokens;
   }
 
-  setCredentials(tokens: any) {
+  setCredentials(tokens: { access_token?: string; refresh_token?: string; scope?: string; token_type?: string; expiry_date?: number }) {
     this.oauth2Client.setCredentials(tokens);
   }
 
